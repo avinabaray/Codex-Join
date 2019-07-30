@@ -1,17 +1,15 @@
-import java.math.BigInteger;
-
 public class LargestPrimeFactor
 {
-	public static void main(String args[])
-	{
-		BigInteger n=new BigInteger("600851475143");
-		for(BigInteger i=new BigInteger("2"); i.compareTo(n)<0; i=i.add(BigInteger.ONE))
-		{
-			while(n.remainder(i).equals(BigInteger.ZERO))
-			{
-				n=n.divide(i);
-			}
-		}
-		System.out.println(n);
-	}
+    public static void main(String args[])
+    {
+        long n= 600851475143L;
+        for(long i=2L; i<n; i++)
+        {
+            while(n%i == 0)
+            {
+                n = n/i;
+            }
+        }
+        System.out.println(n);
+    }
 }
