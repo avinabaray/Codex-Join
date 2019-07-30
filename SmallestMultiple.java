@@ -2,20 +2,19 @@ public class SmallestMultiple
 {
 	public static void main(String agrs[])
 	{
-		int flag=1, i=1;
-		while(flag==1)
-		{
-			flag=0;
-			for(int j=1;j<=20;j++)
-			{
-				if(i%j!=0)
-				{
-					flag=1;
+		int first_number = 1, lcm = first_number;
+		for (int i=2; i<=20 ;i++) {
+			int second_number = i;
+			lcm = (first_number > second_number) ? first_number : second_number;
+
+			while (true) {
+				if (lcm % first_number == 0 && lcm % second_number == 0) {
+					first_number = lcm;
 					break;
 				}
+				++lcm;
 			}
-			i++;
 		}
-		System.out.println("Smallest Multiple: "+(i-1));
+		System.out.println(lcm);
 	}
 }
