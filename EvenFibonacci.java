@@ -15,3 +15,5 @@ public class EvenFibonacci
         System.out.println("Sum: "+sum);
     }
 }
+
+//test
